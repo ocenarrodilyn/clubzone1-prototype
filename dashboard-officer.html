@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubZone | Officer Dashboard</title>
+    <link rel="stylesheet" href="dashboard-o.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-section">
+            <div class="logo-icon"><i class="fas fa-book-open"></i></div>
+            <div class="logo-text"><h1>ClubZone</h1><p>School Club Management</p></div>
+        </div>
+         <nav class="nav-links">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-list"></i> Club Directory</a>
+            <a href="#"><i class="fas fa-user"></i> Profile</a>
+        </nav>
+        <div class="nav-right">
+            <div class="user-info">
+                <strong>Michael Chen</strong>
+                <span class="user-badge">Club Officer</span>
+            </div>
+            <button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <h2>Welcome back, Michael! 🎯</h2>
+            <p>Manage your club's announcements and events</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card"><h3>8</h3><p>Active Announcements</p></div>
+            <div class="stat-card"><h3>3</h3><p>Upcoming Events</p></div>
+            <div class="stat-card"><h3>42</h3><p>Club Members</p></div>
+        </div>
+
+        <div class="action-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search your announcements...">
+            </div>
+            <button class="primary-btn" id="createBtn"><i class="fas fa-plus"></i> Create Announcement</button>
+        </div>
+
+        <h3>Your Announcements</h3>
+        <div class="grid" id="announcementGrid">
+            </div>
+    </main>
+
+    <div class="modal" id="announcementModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Edit Announcement</h2>
+            <form id="announcementForm">
+                <label>Announcement Title</label>
+                <input type="text" id="titleInput" required>
+                
+                <label>Event Name</label>
+                <input type="text" id="eventInput" required>
+                
+                <div class="form-row">
+                    <div><label>Date</label><input type="date" id="dateInput"></div>
+                    <div><label>Time</label><input type="time" id="timeInput"></div>
+                </div>
+                
+                <label>Location</label>
+                <input type="text" id="locInput">
+
+                <div class="modal-footer">
+                    <button type="button" class="secondary-btn" id="closeModal">Cancel</button>
+                    <button type="submit" class="primary-btn">Submit for Approval</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script-dbofficer.js"></script>
+</body>
+</html>
